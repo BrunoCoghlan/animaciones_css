@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/*configuracion del body como Displey Grid*/
+body {
+    background-color: #FFE7CE;
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        'nav'
+        'main'
+        'footer'
+    ;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 50px;
+}
+
+/*configuracion de los elementos GRID*/
+/*configuracion o menu*/
+nav {
+    background-color: #E4A5FF;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    align-items: center;
+}
+
+nav>h1 {
+    justify-self: left;
+    flex-grow: 1;
+}
+
+nav>i {
+    font-size: 2rem;
+}
+
+nav>img {
+    object-fit: cover;
+    height: 49px;
+    border-radius: 50%;
+}
+
+/*fin nav configuracion nav o menu*/
+/*configuracion main o galeria*/
+main {
+    grid-area: main;
+}
+
+/*fin configuracion main o galeria*/
+/*configuracion footer*/
+footer {
+    background-color: #FFCDA8;
+    grid-area: footer;
+
+}
+
+/*fin configuracion footer*/
+/*Media queries tablet*/
+@media (min-width: 576px) {
+    body {
+        grid-template-columns: 1fr 150px;
+        grid-template-rows: 1fr 50px 50px;
+        grid-template-areas:
+            'main nav'
+            'main nav'
+            'footer footer'
+        ;
+    }
+}
+
+/*fin Media queries tablet*/
+/*Media queries desktop*/
+@media (min-width: 992px) {
+    body {
+        grid-template-columns: 200px 1fr;
+        grid-template-rows: 1fr 50px 50px;
+        grid-template-areas:
+            'nav main'
+            'nav main'
+            'footer main'
+        ;
+    }
+}
+
+/*fin Media queries desktop*/
+/*inicio animaciones*/
+/*fin  animaciones*/
