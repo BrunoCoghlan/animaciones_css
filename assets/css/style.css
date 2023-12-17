@@ -87,6 +87,7 @@ main {
     background-color: #FFFDA2;
     border-radius:  2rem 0.5rem ;
     transform: rotateY(0deg);
+    text-align: center;
 }
 .card>.back{
     display: flex;
