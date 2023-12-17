@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: roboto, sans-serif;
 }
 
 /*configuracion del body como Displey Grid*/
@@ -23,7 +24,7 @@ body {
 /*configuracion de los elementos GRID*/
 /*configuracion o menu*/
 nav {
-    background-color: #E4A5FF;
+    background-color: #FF6363;
     grid-area: nav;
     display: flex;
     justify-content: space-between;
@@ -34,6 +35,7 @@ nav {
 nav>h1 {
     justify-self: left;
     flex-grow: 1;
+    padding: 0 1rem;
 }
 
 nav>i {
@@ -50,14 +52,87 @@ nav>img {
 /*configuracion main o galeria*/
 main {
     grid-area: main;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+}
+.card{
+    width: 320px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.card>div{
+    position: absolute;
+    backface-visibility: hidden;
+    width: 320px;
+    height: 400px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+.card>.front{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: #FFFDA2;
+    border-radius:  2rem 0.5rem ;
+    transform: rotateY(0deg);
+}
+.card>.back{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    padding: 50px;
+    background-color: #FFFDA2;
+    border-radius:  2rem 0.5rem ;
+    transform: rotateY(180deg);
+}
+.card>.front>img{
+    width: 300px;
+    height: 350px;
+    object-fit: cover;
+    object-position: center;
+    border-radius:  2rem 0.5rem ;
+    justify-self: self-start;
 }
 
 /*fin configuracion main o galeria*/
 /*configuracion footer*/
 footer {
-    background-color: #FFCDA8;
+    background-color: #FFAB76;
     grid-area: footer;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+footer>h3 {
+    font-size: 0.8rem;
+}
+
+footer>div {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+footer>div>a{
+    text-decoration: none;
+}
+footer>div>a>i {
+    font-size: 0.8rem;
+    color: #000;
 }
 
 /*fin configuracion footer*/
@@ -90,4 +165,11 @@ footer {
 
 /*fin Media queries desktop*/
 /*inicio animaciones*/
+.card:hover>.front{
+    transform: rotateY(180deg);
+}
+.card:hover>.back{
+    transform: rotateY(360deg);
+}
+
 /*fin  animaciones*/
