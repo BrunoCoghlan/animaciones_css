@@ -31,7 +31,9 @@ nav {
     padding: 0 1rem;
     align-items: center;
 }
-
+nav>ul{
+    display: none;
+}
 nav>h1 {
     justify-self: left;
     flex-grow: 1;
@@ -139,13 +141,44 @@ footer>div>a>i {
 /*Media queries tablet*/
 @media (min-width: 576px) {
     body {
-        grid-template-columns: 1fr 150px;
+        grid-template-columns: 1fr 200px;
         grid-template-rows: 1fr 50px 50px;
         grid-template-areas:
             'main nav'
             'main nav'
             'footer footer'
         ;
+    }
+    main{
+        overflow-y: scroll;
+    }
+    nav{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items:center;
+        padding-top: 2rem;
+        gap: 10px;
+    }
+    nav>img{
+        height: 190px;
+    }
+    nav>h1{
+        flex-grow: 0;
+    }
+    nav>.fa-solid{
+        display: none;
+    }
+    nav>ul{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 5px;
+    }
+    nav>ul>li>a{
+        text-decoration: none;
+        color: #000;
+        font-weight:bold;
+        transition: 0.3s;
     }
 }
 
@@ -171,5 +204,7 @@ footer>div>a>i {
 .card:hover>.back{
     transform: rotateY(360deg);
 }
-
+nav>ul>li>a:hover{
+    opacity: 50%;
+}
 /*fin  animaciones*/
